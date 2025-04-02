@@ -1,0 +1,17 @@
+{
+    "Pergunta1": [
+      "1) A quantidade de figurinhas que Valdirene tem, mais 7, é igual ao dobro da quantidade de figurinhas que Rogério tem mais 15. Se Rogério possui 30 figurinhas, então o número de figurinhas que Valdirene possui é igual a:"
+    ],
+    "Respostas_P1": {
+      "Resposta_Errada_P1": [
+        "78 figurinhas",
+        "65 figurinhas",
+        "52 figurinhas",
+        "60 figurinhas"
+      ],
+      "Resposta_Certa_P1": [
+        "68 figurinhas"
+      ]
+    }
+  }
+  
