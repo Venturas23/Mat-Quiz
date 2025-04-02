@@ -1,13 +1,13 @@
 [
     {
         "question":"A quantidade de figurinhas que Valdirene tem, mais 7, é igual ao dobro da quantidade de figurinhas que Rogério tem mais 15. Se Rogério possui 30 figurinhas, então o número de figurinhas que Valdirene possui é igual a:",
-        "options": ["78 figurinhas", "65 figurinhas", "52 figurinhas", "60 figurinhas", "68 figurinhas"],
-        "correct": "68 figurinhas"
+        "options": ["78 Figurinhas", "65 Figurinhas", "52 Figurinhas", "60 Figurinhas", "68 Figurinhas"],
+        "correct": "68 Figurinhas"
     },
     {
         "question":"O perímetro de um retângulo é igual a 240 cm. Se a medida do comprimento desse terreno é de 75 cm, a medida da largura desse terreno é igual a:",
-        "options": ["28 cm", "47 cm", "45 cm", "40 cm", "50 cm"],
-        "correct": "45 cm"
+        "options": ["28 CM", "47 CM", "45 CM", "40 CM", "50 CM"],
+        "correct": "45 CM"
     },
     {
         "question":"Em um estacionamento há carros e motos, totalizando 140 veículos. Se o número de carros é igual ao triplo do número de motos, o total de motos nesse estacionamento é:",
