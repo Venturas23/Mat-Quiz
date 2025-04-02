@@ -1,12 +1,52 @@
 [
     {
-        "question": "Qual é a capital da França?",
-        "options": ["Paris", "Londres", "Berlim"],
-        "correct": "Paris"
+        "question":"A quantidade de figurinhas que Valdirene tem, mais 7, é igual ao dobro da quantidade de figurinhas que Rogério tem mais 15. Se Rogério possui 30 figurinhas, então o número de figurinhas que Valdirene possui é igual a:",
+        "options": ["78 figurinhas", "65 figurinhas", "52 figurinhas", "60 figurinhas", "68 figurinhas"],
+        "correct": "68 figurinhas"
     },
     {
-        "question": "Qual é a maior floresta tropical do mundo?",
-        "options": ["Amazônia", "Congo", "Daintree"],
-        "correct": "Amazônia"
+        "question":"O perímetro de um retângulo é igual a 240 cm. Se a medida do comprimento desse terreno é de 75 cm, a medida da largura desse terreno é igual a:",
+        "options": ["28 cm", "47 cm", "45 cm", "40 cm", "50 cm"],
+        "correct": "45 cm"
+    },
+    {
+        "question":"Em um estacionamento há carros e motos, totalizando 140 veículos. Se o número de carros é igual ao triplo do número de motos, o total de motos nesse estacionamento é:",
+        "options":["50", "35", "40", "45", "30"],
+        "correct":"35"
+    },
+    {
+        "question":"Em uma empresa, um terço dos funcionários são mulheres e 38 funcionários são homens. O número de mulheres dessa empresa é igual a:",
+        "options":["35", "32", "20", "19", "32"],
+        "correct":"19"
+    },
+    {
+        "question":"A soma de um número com o seu sucessor e o seu antecessor é igual a 420. Esse número é igual a:",
+        "options":["145", "150", "70", "132", "140"],
+        "correct":"140"
+    },
+    {
+       "question":"A idade de Moacir mais a idade do seu pai somam juntas 38 anos. Sabendo que o Moacir tem 13 anos, qual é a idade de seu pai?",
+       "options":["25", "29", "30", "31", "32"],
+       "correct":"25"
+    },
+    {
+        "question":"Jacinto foi até a padaria e comprou 3 salgados mais um refrigerante e pagou um total de R$ 21,75. Sabendo que o refrigerante custava R$ 6,00, qual foi o valor pago por cada salgado?",
+        "options":["R$2,00", "R$3,00", "R$4,00", "R$5,25", "R$8,70"],
+        "correct":"R$5,25"
+    },
+    {
+       "question":"Uma peça de tecido, após a lavagem, perdeu 2/10 de seu comprimento e este ficou medindo 48 metros. Nestas condições, o comprimento, em m, da peça antes da lavagem era igual a:",
+       "options":["52", "48", "60", "50"],
+       "correct":"60"
+    },
+    {
+        "question":"Um retângulo com 150 cm de perímetro apresenta a medida do lado maior com 20 cm a mais que o lado menor. Quanto mede o lado menor dessa figura geométrica?",
+        "options":["27,5", "30,5", "25", "27"],
+        "correct":"27,5"
+    },
+    {
+        "question":"20 unidades somadas ao dobro de um número é igual a 110. Qual é esse número?",
+        "options":["40", "65", "50", "45"],
+        "correct":"45"
     }
 ]
