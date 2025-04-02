@@ -4,19 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mat-Quiz</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
 </head>
+<header>
+    <h1 class="titulo">Mat-Quiz</h1>
+</header>
 <body>
-    <form>
-        <div class="pergunta">
-            <img src="" alt="" class="Img_Pergunta">
-            <h1 id="pergunta_Input"></h1>
-
+    <div class="Alinhar">
+        <div class="quiz-container" id="quiz-container">
+            </div>
+            <div class="quiz-content">
+                <div class="question-container">
+                    <p id="question-text">Carregando...</p>
+                    <div class="options-container" id="options-container"></div>
+                </div>
+                <button id="next-btn" class="next-btn" onclick="nextQuestion()">Próxima</button>
+            </div>
+            <div class="Alinhar_resultado">
+                <div class="result-container" id="result-container">
+                    <h2>Resultado</h2>
+                    <p id="score"></p>
+                </div>
+            </div>
         </div>
-        <div class="Resposta">
-                
+    </div>
+    <div class="background">
+        <canvas id="c"></canvas>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/background.js"></script>
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Digite a senha para atualizar o site:</p>
+            <input type="password" id="password-input">
+            <button onclick="verifyPassword()">Verificar</button>
         </div>
-    </form>
+    </div>
+    <img src="img/CEAK (0-00-02-24).png" alt="Logo CEAK" load="lazy" class="logo">
+    <img src="img/Imagem_do_WhatsApp_de_2025-03-23_à_s__16.51.40_6adf0f26-removebg-preview.png" alt="Logo 3A" load="lazy" class="logo2">
 </body>
 </html>
