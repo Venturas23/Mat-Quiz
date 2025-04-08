@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
     
 </head>
 <header>
@@ -15,10 +17,14 @@
 </header>
 <body>
     <div class="Alinhar">
+        
         <div class="quiz-container" id="quiz-container">
             </div>
             <div class="quiz-content">
                 <div class="question-container">
+                    <div id="start-container">
+                        <button id="start-btn">Começar</button>
+                    </div>
                     <p id="question-text">Carregando...</p>
                     <div class="options-container" id="options-container"></div>
                 </div>
@@ -37,6 +43,7 @@
     </div>
     <script src="js/main.js"></script>
     <script src="js/background.js"></script>
+    <script src="js/Fullscreen.js"></script>
     <div id="password-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
