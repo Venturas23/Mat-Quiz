@@ -7,6 +7,9 @@ body {
     margin: 0;
     color: white;
 }
+#start-btn{
+    width: auto;
+}
 .background{
     z-index: -1;
     width: 100vw;
