@@ -14,8 +14,7 @@ body {
     font-size: 30px;
     transform: scale(1.0);
     background-color: greenyellow;
-    transition: transform 0.3s;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 #start-btn:hover{
     width: 35%;
