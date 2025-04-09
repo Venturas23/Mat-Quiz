@@ -12,9 +12,9 @@ body {
     height: 100%;
     border-radius: 10px;
     font-size: 30px;
+    transform: scale(1.0);
     background-color: greenyellow;
-    size: 1;
-    transition: size 0.3s;
+    transition: transform 0.3s;
     transition: background-color 0.3s;
 }
 #start-btn:hover{
@@ -22,7 +22,7 @@ body {
     height: 100%;
     border-radius: 10px;
     font-size: 30px;
-    size: 1.1;
+    transform: scale(1.1);
     background-color: rgb(110, 163, 31);
 }
 #start-container{
