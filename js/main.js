@@ -1,6 +1,6 @@
 const password = "ceaksenha"; // Defina a senha desejada
 const SPREADSHEET_ID = '1FlbQ-JZvOhGh7Du8t4qzcAB7-S9aAld31_KnIy_5Ydo'; // Substitua pelo ID da sua planilha
-const CLIENT_ID = '762037608110-4492dgubj8g4bsnkr8dm4a520tkhiku8.apps.googleusercontent.com'; // Substitua pelo ID do cliente obtido do Google Cloud Console
+const CLIENT_ID = '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'; // Substitua pelo ID do cliente obtido do Google Cloud Console
 const API_KEY = 'AIzaSyBn7_VBW6gWaiI_85aqEbjAOP0nwSmkr6g'; // Substitua pela sua chave de API obtida do Google Cloud Console
 const DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
 const SCOPES = "https://www.googleapis.com/auth/spreadsheets";
