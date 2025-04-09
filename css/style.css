@@ -8,7 +8,15 @@ body {
     color: white;
 }
 #start-btn{
-    width: auto;
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+}
+#start-container{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .background{
     z-index: -1;
