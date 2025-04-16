@@ -1,8 +1,9 @@
 const password = "ceaksenha"; // Defina a senha desejada
 const GITHUB_OWNER = 'Venturas23'; // Substitua pelo nome do proprietário do repositório
 const GITHUB_REPO = 'Mat-Quiz'; // Substitua pelo nome do repositório
-const GITHUB_TOKEN = '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'; // Substitua pelo seu token de acesso pessoal do GitHub
+const GITHUB_TOKEN_base64 = 'qmyfDnUy+8caFQ3zBJFwJKEVISmPEHAj6SHu1ZXwVqSgMDHdrLaqdAFpNpSqPjIkRkE9+OlOzMg='; // Substitua pelo seu token de acesso pessoal do GitHub
 const GITHUB_FILE_PATH = 'respostas/quiz-respostas.json'; // Caminho do arquivo onde as respostas serão salvas
+const iv = 'SmH4IH+JzBkDI3VR';
 
 let questions = [];
 let currentQuestionIndex = 0;
@@ -10,6 +11,53 @@ let score = 0;
 let allowUnload = false;
 let playerName = '';
 
+async function generateKey() {
+    return await crypto.subtle.generateKey(
+      {
+        name: "AES-GCM",
+        length: 256,
+      },
+      true,
+      ["encrypt", "decrypt"]
+    );
+  }
+function arrayBufferToBase64(buffer) {
+    return btoa(String.fromCharCode(...new Uint8Array(buffer)));
+  }
+  
+  // Função para converter Base64 para ArrayBuffer
+  function base64ToArrayBuffer(base64) {
+    const binaryString = atob(base64);
+    const length = binaryString.length;
+    const bytes = new Uint8Array(length);
+    for (let i = 0; i < length; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+    return bytes.buffer;
+  }
+  // Função para desencriptar o token
+  async function decryptToken(key, encryptedDataBase64, ivBase64) {
+    const encryptedData = base64ToArrayBuffer(encryptedDataBase64); // Convertendo de Base64 para ArrayBuffer
+    const iv = base64ToArrayBuffer(ivBase64); // Convertendo IV de Base64 para ArrayBuffer
+  
+    const decrypted = await crypto.subtle.decrypt(
+      {
+        name: "AES-GCM",
+        iv: new Uint8Array(iv), // Certificando-se de que é um Uint8Array
+      },
+      key,
+      encryptedData
+    );
+  
+    const decoder = new TextDecoder();
+    return decoder.decode(decrypted);
+  }
+  (async () => {
+    const key = await generateKey();
+    // Desencriptar o token
+    const decryptedToken = await decryptToken(key, GITHUB_TOKEN_base64, iv);
+    console.log("Token Desencriptado:", decryptedToken);
+  })();
 function fetchQuestions() {
     fetch('https://venturas23.github.io/Mat-Quiz/Pergunta.json')
         .then(response => response.json())
@@ -85,7 +133,7 @@ function saveResultsToGitHub(name, score) {
     // Obter o SHA do arquivo existente (necessário para atualizações)
     fetch(apiUrl, {
         headers: {
-            Authorization: `Bearer ${GITHUB_TOKEN}`,
+            Authorization: `Bearer ${decryptedToken}`,
             Accept: 'application/vnd.github.v3+json',
         },
     })
@@ -102,7 +150,7 @@ function saveResultsToGitHub(name, score) {
             return fetch(apiUrl, {
                 method: 'PUT',
                 headers: {
-                    Authorization: `Bearer ${GITHUB_TOKEN}`,
+                    Authorization: `Bearer ${decryptedToken}`,
                     Accept: 'application/vnd.github.v3+json',
                     'Content-Type': 'application/json',
                 },
