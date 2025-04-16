@@ -135,6 +135,11 @@ function restartQuiz() {
     loadQuestion();
     document.getElementById('next-btn').style.display = 'none';
 }
+// Função para bloquear a cópia
+document.addEventListener('copy', (event) => {
+    event.preventDefault();
+    alert('Copiar não é permitido neste site.');
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const startBtn = document.getElementById('start-btn');
@@ -151,3 +156,81 @@ function askPlayerName() {
         alert('Nome do jogador é necessário para iniciar o quiz.');
     }
 }
+
+<<<<<<< HEAD
+function enterFullscreen() {
+    const element = document.documentElement;
+    if (element.requestFullscreen) {
+        element.requestFullscreen().catch(err => {
+            console.error(`Erro ao entrar em tela cheia: ${err.message} (${err.name})`);
+        });
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen().catch(err => {
+            console.error(`Erro ao entrar em tela cheia: ${err.message} (${err.name})`);
+        });
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        element.webkitRequestFullscreen().catch(err => {
+            console.error(`Erro ao entrar em tela cheia: ${err.message} (${err.name})`);
+        });
+    } else if (element.msRequestFullscreen) { // IE/Edge
+        element.msRequestFullscreen().catch(err => {
+            console.error(`Erro ao entrar em tela cheia: ${err.message} (${err.name})`);
+        });
+    } else {
+        console.error('API de tela cheia não suportada pelo navegador.');
+    }
+}
+
+document.addEventListener('fullscreenchange', checkFullscreen);
+document.addEventListener('webkitfullscreenchange', checkFullscreen);
+document.addEventListener('mozfullscreenchange', checkFullscreen);
+document.addEventListener('msfullscreenchange', checkFullscreen);
+
+function checkFullscreen() {
+    const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+    if (!fullscreenElement) {
+        alert('Você saiu do modo de tela cheia. Seus resultados serão exibidos.');
+        score = 0;
+        showResults();
+    }
+}
+
+// Interceptar o evento de recarregamento e solicitar senha
+window.addEventListener('beforeunload', (event) => {
+    if (!allowUnload) {
+        event.preventDefault();
+        event.returnValue = '';
+        openModal();
+    }
+});
+
+function openModal() {
+    document.getElementById('password-modal').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('password-modal').style.display = 'none';
+}
+
+function verifyPassword() {
+    const enteredPassword = document.getElementById('password-input').value;
+    if (enteredPassword === password) {
+        allowUnload = true;
+        window.location.reload();
+    } else {
+        alert('Senha incorreta. A atualização foi cancelada.');
+        closeModal();
+    }
+}
+
+// Bloquear a atualização pelo F5, Ctrl+R, Ctrl+Shift+R
+document.addEventListener('keydown', (event) => {
+    if ((event.key === 'F5') || 
+        (event.ctrlKey && event.key === 'r') || 
+        (event.ctrlKey && event.shiftKey && event.key === 'r')) {
+        event.preventDefault();
+        openModal();
+    }
+});
+=======
+>>>>>>> 50773aedf03e3c07ab20da826218acecd84e5b6f
