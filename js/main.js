@@ -157,7 +157,6 @@ function askPlayerName() {
     }
 }
 
-<<<<<<< HEAD
 function enterFullscreen() {
     const element = document.documentElement;
     if (element.requestFullscreen) {
@@ -232,5 +231,3 @@ document.addEventListener('keydown', (event) => {
         openModal();
     }
 });
-=======
->>>>>>> 50773aedf03e3c07ab20da826218acecd84e5b6f
