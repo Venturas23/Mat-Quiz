@@ -1,8 +1,8 @@
 const password = "ceaksenha"; // Defina a senha desejada
 const GITHUB_OWNER = 'Venturas23'; // Substitua pelo nome do proprietário do repositório
 const GITHUB_REPO = 'Mat-Quiz'; // Substitua pelo nome do repositório
-const GITHUB_TOKEN = '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'; // Substitua pelo seu token de acesso do GitHub
-const GITHUB_FILE_PATH = 'respostas/quiz-respostas.json'; // Caminho do arquivo onde os dados serão salvos
+const GITHUB_TOKEN = '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'; // Substitua pelo seu token de acesso pessoal do GitHub
+const GITHUB_FILE_PATH = 'respostas/quiz-respostas.json'; // Caminho do arquivo onde as respostas serão salvas
 
 let questions = [];
 let currentQuestionIndex = 0;
@@ -135,11 +135,6 @@ function restartQuiz() {
     loadQuestion();
     document.getElementById('next-btn').style.display = 'none';
 }
-// Função para bloquear a cópia
-document.addEventListener('copy', (event) => {
-    event.preventDefault();
-    alert('Copiar não é permitido neste site.');
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     const startBtn = document.getElementById('start-btn');
@@ -156,78 +151,3 @@ function askPlayerName() {
         alert('Nome do jogador é necessário para iniciar o quiz.');
     }
 }
-
-function enterFullscreen() {
-    const element = document.documentElement;
-    if (element.requestFullscreen) {
-        element.requestFullscreen().catch(err => {
-            console.error(`Erro ao entrar em tela cheia: ${err.message} (${err.name})`);
-        });
-    } else if (element.mozRequestFullScreen) { // Firefox
-        element.mozRequestFullScreen().catch(err => {
-            console.error(`Erro ao entrar em tela cheia: ${err.message} (${err.name})`);
-        });
-    } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
-        element.webkitRequestFullscreen().catch(err => {
-            console.error(`Erro ao entrar em tela cheia: ${err.message} (${err.name})`);
-        });
-    } else if (element.msRequestFullscreen) { // IE/Edge
-        element.msRequestFullscreen().catch(err => {
-            console.error(`Erro ao entrar em tela cheia: ${err.message} (${err.name})`);
-        });
-    } else {
-        console.error('API de tela cheia não suportada pelo navegador.');
-    }
-}
-
-document.addEventListener('fullscreenchange', checkFullscreen);
-document.addEventListener('webkitfullscreenchange', checkFullscreen);
-document.addEventListener('mozfullscreenchange', checkFullscreen);
-document.addEventListener('msfullscreenchange', checkFullscreen);
-
-function checkFullscreen() {
-    const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
-    if (!fullscreenElement) {
-        alert('Você saiu do modo de tela cheia. Seus resultados serão exibidos.');
-        score = 0;
-        showResults();
-    }
-}
-
-// Interceptar o evento de recarregamento e solicitar senha
-window.addEventListener('beforeunload', (event) => {
-    if (!allowUnload) {
-        event.preventDefault();
-        event.returnValue = '';
-        openModal();
-    }
-});
-
-function openModal() {
-    document.getElementById('password-modal').style.display = 'flex';
-}
-
-function closeModal() {
-    document.getElementById('password-modal').style.display = 'none';
-}
-
-function verifyPassword() {
-    const enteredPassword = document.getElementById('password-input').value;
-    if (enteredPassword === password) {
-        allowUnload = true;
-        window.location.reload();
-    } else {
-        alert('Senha incorreta. A atualização foi cancelada.');
-        closeModal();
-    }
-}
-
-// Bloquear a atualização pelo F5, Ctrl+R, Ctrl+Shift+R
-document.addEventListener('keydown', (event) => {
-    if ((event.key === 'F5') || 
-        (event.ctrlKey && event.key === 'r') || 
-        (event.ctrlKey && event.shiftKey && event.key === 'r')) {
-        event.preventDefault();
-        openModal();
-    }
-});
