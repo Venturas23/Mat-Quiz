@@ -1,7 +1,7 @@
 const password = "ceaksenha"; // Defina a senha desejada
 const GITHUB_OWNER = 'Venturas23'; // Substitua pelo nome do proprietário do repositório
 const GITHUB_REPO = 'Mat-Quiz'; // Substitua pelo nome do repositório
-const GITHUB_TOKEN = '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'; // Substitua pelo seu token de acesso pessoal do GitHub
+const GITHUB_TOKEN = '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'; // Substitua pelo seu token de acesso pessoal do GitHub
 const GITHUB_FILE_PATH = 'respostas/quiz-respostas.json'; // Caminho do arquivo onde as respostas serão salvas
 
 let questions = [];
