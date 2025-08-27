@@ -46,14 +46,14 @@ body {
     bottom: 0px;
     right: 0px;
     width: 10vw;
-    height: 12vh;
+    height: auto;
 }
 .logo2{
     position: absolute;
     bottom: -50px;
     left: 0px;
     width: 10vw;
-    height: 25vh;
+    height: auto;
 }
 .Alinhar{
     display: block;
