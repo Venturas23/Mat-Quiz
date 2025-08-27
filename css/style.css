@@ -178,3 +178,13 @@ body {
 .modal-content{
     color:#000000
 }
+.Sub-titulo{
+    position: absolute;
+    right: 0;
+}
+.link-colega{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+}
